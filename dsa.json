@@ -1,0 +1,146 @@
+{
+  "id": "xrashxourse-dsa-001",
+  "name": "XrashXourse",
+  "title": "Operation: Crack DSA",
+  "theme": "LumberJacks in Canada",
+  "description": "A focused 5-day crash course covering Arrays, Hashing, Sorting, and Searching. Designed for interview preparation using the highest-yield patterns.",
+  "duration": {
+    "days": 5,
+    "estimatedHours": 5
+  },
+  "language": "JavaScript",
+  "difficulty": "Beginner to Intermediate",
+  "status": "locked",
+
+  "days": [
+    {
+      "day": 1,
+      "title": "Arrays & HashMap Fundamentals",
+      "objective": "Understand HashMaps and solve the most common array interview problems.",
+      "topics": [
+        "Array Traversal",
+        "HashMap",
+        "Time Complexity",
+        "Space Complexity"
+      ],
+      "patterns": ["HashMap Lookup", "Frequency Counting"],
+      "problems": [
+        {
+          "title": "Two Sum",
+          "leetcode": 1,
+          "difficulty": "Easy"
+        },
+        {
+          "title": "Contains Duplicate",
+          "leetcode": 217,
+          "difficulty": "Easy"
+        },
+        {
+          "title": "Valid Anagram",
+          "leetcode": 242,
+          "difficulty": "Easy"
+        }
+      ]
+    },
+
+    {
+      "day": 2,
+      "title": "Prefix Sum & Sliding Window",
+      "objective": "Recognize cumulative sum and fixed-size window patterns.",
+      "topics": ["Prefix Sum", "Sliding Window"],
+      "patterns": ["Running Sum", "Window Expansion"],
+      "problems": [
+        {
+          "title": "Subarray Sum Equals K",
+          "leetcode": 560,
+          "difficulty": "Medium"
+        },
+        {
+          "title": "Best Time to Buy and Sell Stock",
+          "leetcode": 121,
+          "difficulty": "Easy"
+        },
+        {
+          "title": "Maximum Average Subarray I",
+          "leetcode": 643,
+          "difficulty": "Easy"
+        }
+      ]
+    },
+
+    {
+      "day": 3,
+      "title": "Two Pointers & Array Optimization",
+      "objective": "Learn pointer movement and space optimization.",
+      "topics": ["Two Pointers", "Array Manipulation"],
+      "patterns": ["Left/Right Pointer", "Prefix & Suffix"],
+      "problems": [
+        {
+          "title": "Product of Array Except Self",
+          "leetcode": 238,
+          "difficulty": "Medium"
+        },
+        {
+          "title": "Longest Consecutive Sequence",
+          "leetcode": 128,
+          "difficulty": "Medium"
+        },
+        {
+          "title": "Maximum Subarray",
+          "leetcode": 53,
+          "difficulty": "Medium"
+        }
+      ]
+    },
+
+    {
+      "day": 4,
+      "title": "Sorting & Binary Search",
+      "objective": "Master searching on sorted data.",
+      "topics": ["Sorting", "Binary Search"],
+      "patterns": ["Classic Binary Search", "Custom Sorting"],
+      "problems": [
+        {
+          "title": "Binary Search",
+          "leetcode": 704,
+          "difficulty": "Easy"
+        },
+        {
+          "title": "Search Insert Position",
+          "leetcode": 35,
+          "difficulty": "Easy"
+        },
+        {
+          "title": "Search in Rotated Sorted Array",
+          "leetcode": 33,
+          "difficulty": "Medium"
+        }
+      ]
+    },
+
+    {
+      "day": 5,
+      "title": "Search Space Problems",
+      "objective": "Apply binary search beyond arrays and revise everything learned.",
+      "topics": ["Binary Search on Answer", "Search Space"],
+      "patterns": ["Answer Binary Search", "Range Search"],
+      "problems": [
+        {
+          "title": "Find First and Last Position of Element in Sorted Array",
+          "leetcode": 34,
+          "difficulty": "Medium"
+        },
+        {
+          "title": "Koko Eating Bananas",
+          "leetcode": 875,
+          "difficulty": "Medium"
+        },
+        {
+          "title": "Aggressive Cows",
+          "platform": "Coding Ninjas / GFG",
+          "difficulty": "Medium"
+        }
+      ]
+    }
+  ]
+}
