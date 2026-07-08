@@ -1,16 +1,16 @@
 const CACHE_NAME = "xamping-cache-v2";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/css/styles.css",
-  "/js/app.js",
-  "/data.json",
-  "/dsa.json",
-  "/Xamp.jpg"
+  "./",
+  "./index.html",
+  "./css/styles.css",
+  "./js/app.js",
+  "./data.json",
+  "./dsa.json",
+  "./Xamp.jpg"
 ];
 
 self.addEventListener("install", (event) => {
-  self.skipWaiting(); 
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("[Service Worker] Precaching app shell");
@@ -32,7 +32,7 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-  self.clients.claim(); 
+  self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {

@@ -2,7 +2,7 @@
   "name": "Xamping",
   "short_name": "Op: Xamping-26",
   "description": "An intensive five-day mission to maximize employability as a Frontend Developer.",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#050706",
