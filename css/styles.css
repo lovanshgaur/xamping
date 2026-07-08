@@ -207,12 +207,11 @@ body {
 .overlay,
 .modal-overlay {
   position: fixed;
-
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 10git commit -m "Initial commit: Operation Hire Me PWA"00;
+  z-index: 1000;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
