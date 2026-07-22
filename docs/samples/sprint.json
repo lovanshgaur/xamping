@@ -1,11 +1,66 @@
 {
-  "kind": "sprint",
-  "id": "sprint-2026-fall",
   "title": "Frontend Apprenticeship — Fall 2026",
-  "goal": "Ship a portfolio-grade frontend engineer in seven weeks.",
-  "startDate": "2026-08-03",
-  "endDate": "2026-09-20",
+  "description": "Seven-week intensive to ship a portfolio-grade frontend engineer.",
+  "goal": "Graduate as a hire-ready frontend engineer with a shipped portfolio.",
+  "duration": 7,
   "totalWeeks": 7,
   "currentWeek": 1,
-  "weeks": []
+  "startDate": "2026-08-03",
+  "endDate": "2026-09-20",
+  "status": "active",
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "title": "Foundations",
+      "objective": "Lock in TypeScript, React fundamentals, and tooling.",
+      "theme": "Foundations",
+      "days": [
+        {
+          "dayNumber": 1,
+          "date": "2026-08-03",
+          "theme": "Orientation",
+          "mission": "Set up your environment and complete a first ritual in every department.",
+          "managerBrief": "Day 1 is calibration, not volume. Finish small, finish clean.",
+          "estimatedHours": 4,
+          "departments": [
+            {
+              "slug": "learn",
+              "name": "Learn",
+              "tasks": [
+                { "id": "l1-d1-1", "title": "Watch onboarding video", "department": "learn", "estimatedTime": 30, "priority": "high", "difficulty": "easy", "xp": 25, "completed": false, "completedAt": null }
+              ]
+            },
+            {
+              "slug": "build",
+              "name": "Build",
+              "tasks": [
+                { "id": "b1-d1-1", "title": "Scaffold portfolio repo", "department": "build", "estimatedTime": 60, "priority": "high", "difficulty": "easy", "xp": 40, "completed": false, "completedAt": null }
+              ]
+            },
+            {
+              "slug": "grow",
+              "name": "Grow",
+              "tasks": [
+                { "id": "g1-d1-1", "title": "Write a 150-word intro post", "department": "grow", "estimatedTime": 25, "priority": "medium", "difficulty": "easy", "xp": 25, "completed": false, "completedAt": null }
+              ]
+            },
+            {
+              "slug": "career",
+              "name": "Career",
+              "tasks": [
+                { "id": "c1-d1-1", "title": "Update LinkedIn headline", "department": "career", "estimatedTime": 15, "priority": "medium", "difficulty": "easy", "xp": 15, "completed": false, "completedAt": null }
+              ]
+            },
+            {
+              "slug": "operate",
+              "name": "Operate",
+              "tasks": [
+                { "id": "o1-d1-1", "title": "Log today's health metrics", "department": "operate", "estimatedTime": 10, "priority": "low", "difficulty": "easy", "xp": 15, "completed": false, "completedAt": null }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

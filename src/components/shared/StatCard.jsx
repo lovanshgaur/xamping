@@ -7,9 +7,16 @@ import { orDash } from "@/utils/format";
  */
 export function StatCard({ label, value, sub, className }) {
   return (
-    <div className={cn("hairline rounded-[6px] bg-surface p-5", className)}>
-      <p className="eyebrow">{label}</p>
-      <p className="mt-2 font-display text-3xl font-medium leading-none tracking-tight tabular-nums">
+    <div
+      className={cn(
+        "hairline pixel-corners rounded-[6px] bg-card/85 backdrop-blur-sm p-5 lift press transition-colors hover:bg-card",
+        className,
+      )}
+    >
+      <p className="pixel-font text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+        {label}
+      </p>
+      <p className="mt-2 font-display text-3xl font-semibold leading-none tracking-tight tabular-nums">
         {orDash(value)}
       </p>
       {sub ? <p className="mt-2 text-xs text-muted-foreground">{sub}</p> : null}

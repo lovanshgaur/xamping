@@ -78,6 +78,21 @@ export function createEmptyData() {
       /** @type {Record<string, {date:string, metrics:Record<string,number>, scores:any, updatedAt:string}>} */
       byDate: {},
     },
+    timer: {
+      /**
+       * Per-date study-timer state.
+       * @type {Record<string, {
+       *   date: string,
+       *   totalSeconds: number,
+       *   isRunning: boolean,
+       *   startedAt: string|null,
+       *   sessions: Array<{startedAt:string, endedAt:string, seconds:number}>,
+       *   locked: boolean,
+       *   updatedAt: string
+       * }>}
+       */
+      byDate: {},
+    },
     reviews: {
       /** daily reviews keyed by dayId */
       daily: {},
@@ -178,6 +193,7 @@ export function hydrateData(data) {
     employee,
     manager,
     operate: data.operate && typeof data.operate === "object" ? { byDate: data.operate.byDate ?? {} } : empty.operate,
+    timer: data.timer && typeof data.timer === "object" ? { byDate: data.timer.byDate ?? {} } : empty.timer,
     reviews: data.reviews && typeof data.reviews === "object" ? { daily: data.reviews.daily ?? {}, weekly: data.reviews.weekly ?? {} } : empty.reviews,
     analytics,
     history: { ...empty.history, ...(data.history ?? {}) },

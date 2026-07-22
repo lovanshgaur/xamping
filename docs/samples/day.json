@@ -1,47 +1,55 @@
 {
-  "kind": "day",
-  "id": "day-1-1",
   "dayNumber": 1,
   "date": "2026-08-03",
   "theme": "Orientation",
-  "mission": "Set up your environment and complete first ritual across all departments.",
+  "mission": "Set up your environment and complete one ritual across all five departments.",
+  "managerBrief": "Day 1 is calibration, not volume. Finish small, finish clean, and build the habit of submitting a complete day.",
+  "estimatedHours": 4,
+  "status": "upcoming",
+  "completed": false,
+  "submitted": false,
   "departments": [
     {
-      "id": "learn",
+      "slug": "learn",
       "name": "Learn",
+      "description": "Study, courses, notes, and structured practice.",
       "tasks": [
-        { "id": "l1", "title": "Read: Modern React patterns", "xp": 20 },
-        { "id": "l2", "title": "Watch: TypeScript in 100 minutes", "xp": 30 }
+        { "id": "learn-d1-t1", "title": "Read: Modern React patterns", "description": "Skim hooks-first patterns and take three notes.", "department": "learn", "estimatedTime": 30, "priority": "high", "difficulty": "easy", "xp": 25, "completed": false, "completedAt": null, "evidence": "", "notes": "" },
+        { "id": "learn-d1-t2", "title": "Watch: TypeScript in 100 minutes", "description": "Watch the intro talk end to end.", "department": "learn", "estimatedTime": 100, "priority": "medium", "difficulty": "easy", "xp": 35, "completed": false, "completedAt": null, "evidence": "", "notes": "" }
       ]
     },
     {
-      "id": "build",
+      "slug": "build",
       "name": "Build",
+      "description": "Projects, features, commits, and shipping.",
       "tasks": [
-        { "id": "b1", "title": "Scaffold portfolio repo", "xp": 40 },
-        { "id": "b2", "title": "Push initial commit", "xp": 20 }
+        { "id": "build-d1-t1", "title": "Scaffold portfolio repo", "description": "Create the repo, install deps, run the dev server.", "department": "build", "estimatedTime": 60, "priority": "high", "difficulty": "easy", "xp": 50, "completed": false, "completedAt": null, "evidence": "", "notes": "" },
+        { "id": "build-d1-t2", "title": "Push initial commit", "description": "Conventional commit message. Push to main.", "department": "build", "estimatedTime": 20, "priority": "high", "difficulty": "easy", "xp": 30, "completed": false, "completedAt": null, "evidence": "", "notes": "" }
       ]
     },
     {
-      "id": "grow",
+      "slug": "grow",
       "name": "Grow",
+      "description": "Reading, writing, communication, consistency.",
       "tasks": [
-        { "id": "g1", "title": "Write a short intro post", "xp": 25 }
+        { "id": "grow-d1-t1", "title": "Write a 150-word intro post", "description": "What you're building and why, in your own voice.", "department": "grow", "estimatedTime": 25, "priority": "medium", "difficulty": "easy", "xp": 25, "completed": false, "completedAt": null, "evidence": "", "notes": "" }
       ]
     },
     {
-      "id": "career",
+      "slug": "career",
       "name": "Career",
+      "description": "Applications, networking, interviews, portfolio.",
       "tasks": [
-        { "id": "c1", "title": "Update LinkedIn headline", "xp": 15 },
-        { "id": "c2", "title": "Send 1 outreach message", "xp": 25 }
+        { "id": "career-d1-t1", "title": "Update LinkedIn headline", "description": "State what you do and what you're becoming.", "department": "career", "estimatedTime": 15, "priority": "medium", "difficulty": "easy", "xp": 15, "completed": false, "completedAt": null, "evidence": "", "notes": "" },
+        { "id": "career-d1-t2", "title": "Send one outreach message", "description": "One thoughtful message to a target engineer.", "department": "career", "estimatedTime": 20, "priority": "medium", "difficulty": "easy", "xp": 25, "completed": false, "completedAt": null, "evidence": "", "notes": "" }
       ]
     },
     {
-      "id": "operate",
+      "slug": "operate",
       "name": "Operate",
+      "description": "Health, recovery, focus, and performance inputs.",
       "tasks": [
-        { "id": "o1", "title": "Log today’s health metrics", "xp": 15 }
+        { "id": "operate-d1-t1", "title": "Log today's health metrics", "description": "Fill in steps, sleep, study hours, and coding hours.", "department": "operate", "estimatedTime": 10, "priority": "low", "difficulty": "easy", "xp": 15, "completed": false, "completedAt": null, "evidence": "", "notes": "" }
       ]
     }
   ]

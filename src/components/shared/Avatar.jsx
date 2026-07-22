@@ -2,7 +2,8 @@ import { cn } from "@/lib/utils";
 import { buildAvatarUrl, normalizeAvatar } from "@/lib/bootxamp/domain/avatar";
 
 /**
- * DiceBear-backed avatar. Falls back to initials via CSS if the image fails.
+ * Pixel-art avatar. Uses `image-rendering: pixelated` so the raster stays
+ * crisp at any size.
  *
  * @param {{
  *   avatar: any,
@@ -13,8 +14,8 @@ import { buildAvatarUrl, normalizeAvatar } from "@/lib/bootxamp/domain/avatar";
  * }} props
  */
 export function Avatar({ avatar, name, size = 64, className, alt }) {
-  const { style, seed } = normalizeAvatar(avatar);
-  const url = buildAvatarUrl({ style, seed, size });
+  const { seed } = normalizeAvatar(avatar);
+  const url = buildAvatarUrl({ seed });
   const label = alt || `${name || "Employee"} avatar`;
   return (
     <span
@@ -32,6 +33,7 @@ export function Avatar({ avatar, name, size = 64, className, alt }) {
         height={size}
         loading="lazy"
         className="h-full w-full object-cover"
+        style={{ imageRendering: "pixelated" }}
       />
     </span>
   );

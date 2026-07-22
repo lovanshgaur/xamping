@@ -17,6 +17,12 @@ export const PALETTES = Object.freeze([
   { id: "mono", name: "Mono", accent: "#3a3a3a", description: "Pure greyscale." },
   { id: "neon", name: "Neon", accent: "#c6ff00", description: "High-contrast acid green." },
   { id: "sepia", name: "Sepia", accent: "#a0673f", description: "Newsprint warmth." },
+  { id: "candy", name: "Candy", accent: "#ec4899", description: "Bubblegum pink pop." },
+  { id: "arcade", name: "Arcade", accent: "#00e5ff", description: "Electric cyan glow." },
+  { id: "amber", name: "Amber", accent: "#f59e0b", description: "Golden hour honey." },
+  { id: "royal", name: "Royal", accent: "#4f46e5", description: "Deep indigo velvet." },
+  { id: "rose", name: "Rose", accent: "#f43f5e", description: "Warm blush crimson." },
+  { id: "mint", name: "Mint", accent: "#10b981", description: "Fresh menthol green." },
 ]);
 
 export const DEFAULT_PALETTE = "editorial";

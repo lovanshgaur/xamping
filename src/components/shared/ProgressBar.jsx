@@ -31,15 +31,26 @@ export function ProgressBar({ value, label, trailing, colorVar, className }) {
     <div className={cn("flex flex-col gap-2", className)}>
       {label || trailing ? (
         <div className="flex items-baseline justify-between text-xs">
-          <span className="text-muted-foreground">{label}</span>
-          <span className="tabular-nums text-foreground">{trailing}</span>
+          <span className="pixel-font text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+            {label}
+          </span>
+          <span className="pixel-font tabular-nums text-foreground">{trailing}</span>
         </div>
       ) : null}
-      <div className="relative h-[3px] w-full overflow-hidden bg-border">
+      <div className="relative h-2.5 w-full overflow-hidden rounded-[2px] border border-border bg-muted/60">
         <div
           ref={ref}
-          className="absolute inset-0 origin-left"
+          className="relative h-full origin-left"
           style={{ backgroundColor: colorVar ?? "var(--color-foreground)", transform: "scaleX(0)" }}
+        />
+        {/* Pixel segment overlay */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(90deg, transparent 0 6px, color-mix(in oklab, var(--color-background) 65%, transparent) 6px 7px)",
+          }}
         />
       </div>
     </div>

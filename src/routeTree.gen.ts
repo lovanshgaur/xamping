@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TodayRouteImport } from './routes/today'
+import { Route as TimerRouteImport } from './routes/timer'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as OperateRouteImport } from './routes/operate'
 import { Route as ManagerRouteImport } from './routes/manager'
@@ -23,6 +24,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TodayRoute = TodayRouteImport.update({
   id: '/today',
   path: '/today',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimerRoute = TimerRouteImport.update({
+  id: '/timer',
+  path: '/timer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileRoute = ProfileRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/manager': typeof ManagerRoute
   '/operate': typeof OperateRoute
   '/profile': typeof ProfileRoute
+  '/timer': typeof TimerRoute
   '/today': typeof TodayRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/manager': typeof ManagerRoute
   '/operate': typeof OperateRoute
   '/profile': typeof ProfileRoute
+  '/timer': typeof TimerRoute
   '/today': typeof TodayRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/manager': typeof ManagerRoute
   '/operate': typeof OperateRoute
   '/profile': typeof ProfileRoute
+  '/timer': typeof TimerRoute
   '/today': typeof TodayRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/manager'
     | '/operate'
     | '/profile'
+    | '/timer'
     | '/today'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/manager'
     | '/operate'
     | '/profile'
+    | '/timer'
     | '/today'
   id:
     | '__root__'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/manager'
     | '/operate'
     | '/profile'
+    | '/timer'
     | '/today'
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   ManagerRoute: typeof ManagerRoute
   OperateRoute: typeof OperateRoute
   ProfileRoute: typeof ProfileRoute
+  TimerRoute: typeof TimerRoute
   TodayRoute: typeof TodayRoute
 }
 
@@ -167,6 +180,13 @@ declare module '@tanstack/react-router' {
       path: '/today'
       fullPath: '/today'
       preLoaderRoute: typeof TodayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timer': {
+      id: '/timer'
+      path: '/timer'
+      fullPath: '/timer'
+      preLoaderRoute: typeof TimerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile': {
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   ManagerRoute: ManagerRoute,
   OperateRoute: OperateRoute,
   ProfileRoute: ProfileRoute,
+  TimerRoute: TimerRoute,
   TodayRoute: TodayRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,52 +1,29 @@
 import { useState } from "react";
-import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
-import { LayoutDashboard, Menu, LayoutGrid, X, ChevronRight } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { LayoutDashboard, Menu, Sprout, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/constants/routes";
-import { DEPARTMENTS } from "@/constants/departments";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { APP } from "@/config/app";
 
-const DEPT_PATHS = ["/learn", "/build", "/grow", "/career", "/operate"];
-
 export function BottomNav() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const navigate = useNavigate();
   const [navOpen, setNavOpen] = useState(false);
-  const [deptOpen, setDeptOpen] = useState(false);
-
-  const activeDeptPath = DEPT_PATHS.find((p) => pathname.startsWith(p));
-  const activeDept = activeDeptPath
-    ? DEPARTMENTS.find((d) => `/${d.id}` === activeDeptPath)
-    : null;
-  const DeptIcon = activeDept?.icon ?? LayoutGrid;
-  const deptLabel = activeDept?.name ?? "Depts";
 
   const isDashboard = pathname === "/";
+  const isGrow = pathname.startsWith("/grow");
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 bg-surface/95 backdrop-blur hairline-t sm:hidden">
-      <Link
-        to="/"
-        className={cn(
-          "flex flex-col items-center justify-center gap-1 py-3 text-[10px] transition-colors",
-          isDashboard ? "text-foreground" : "text-muted-foreground active:text-foreground",
-        )}
-      >
-        <LayoutDashboard className="h-5 w-5" strokeWidth={1.5} />
-        <span className="uppercase tracking-[0.1em]">Home</span>
-      </Link>
-
+      {/* LEFT — sidebar / menu */}
       <Sheet open={navOpen} onOpenChange={setNavOpen}>
         <SheetTrigger asChild>
           <button
             type="button"
-            className="flex flex-col items-center justify-center gap-1 py-3 text-[10px] text-muted-foreground active:text-foreground"
+            className="flex flex-col items-center justify-center gap-1 py-3 text-[10px] text-muted-foreground active:text-foreground press"
             aria-label="Open navigation"
           >
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background">
-              <Menu className="h-4 w-4" strokeWidth={1.75} />
-            </span>
+            <Menu className="h-5 w-5" strokeWidth={1.75} />
             <span className="uppercase tracking-[0.1em]">Menu</span>
           </button>
         </SheetTrigger>
@@ -77,7 +54,9 @@ export function BottomNav() {
                   >
                     <Icon className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                     <span>{r.label}</span>
-                    {active ? null : <ChevronRight className="ml-auto h-4 w-4 opacity-40" strokeWidth={1.5} />}
+                    {active ? null : (
+                      <ChevronRight className="ml-auto h-4 w-4 opacity-40" strokeWidth={1.5} />
+                    )}
                   </Link>
                 </li>
               );
@@ -86,75 +65,40 @@ export function BottomNav() {
         </SheetContent>
       </Sheet>
 
-      <Sheet open={deptOpen} onOpenChange={setDeptOpen}>
-        <SheetTrigger asChild>
-          <button
-            type="button"
-            className={cn(
-              "flex flex-col items-center justify-center gap-1 py-3 text-[10px] transition-colors",
-              activeDept ? "text-foreground" : "text-muted-foreground active:text-foreground",
-            )}
-            aria-label="Switch department"
-          >
-            <DeptIcon className="h-5 w-5" strokeWidth={1.5} />
-            <span className="uppercase tracking-[0.1em] truncate max-w-[80px]">{deptLabel}</span>
-          </button>
-        </SheetTrigger>
-        <SheetContent side="bottom" className="border-border bg-surface p-0">
-          <div className="flex items-center justify-between p-5 hairline-b">
-            <p className="eyebrow">Switch Department</p>
-            <button
-              type="button"
-              onClick={() => setDeptOpen(false)}
-              className="grid h-8 w-8 place-items-center rounded-[4px] text-muted-foreground"
-              aria-label="Close"
-            >
-              <X className="h-4 w-4" strokeWidth={1.5} />
-            </button>
-          </div>
-          <ul className="grid grid-cols-2 gap-2 p-3 pb-6">
-            {DEPARTMENTS.filter((d) => DEPT_PATHS.includes(`/${d.id}`)).map((d) => {
-              const active = activeDept?.id === d.id;
-              const Icon = d.icon;
-              return (
-                <li key={d.id}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setDeptOpen(false);
-                      navigate({ to: `/${d.id}` });
-                    }}
-                    className={cn(
-                      "flex w-full items-start gap-3 rounded-[6px] p-4 text-left transition-colors hairline",
-                      active
-                        ? "bg-foreground text-background"
-                        : "bg-surface hover:bg-muted",
-                    )}
-                  >
-                    <span
-                      className={cn(
-                        "grid h-9 w-9 shrink-0 place-items-center rounded-[4px]",
-                        active ? "bg-background/10" : "bg-muted",
-                      )}
-                      style={!active ? { color: d.strokeVar } : undefined}
-                    >
-                      <Icon className="h-4 w-4" strokeWidth={1.5} />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block font-display text-base font-medium tracking-tight">
-                        {d.name}
-                      </span>
-                      <span className={cn("mt-0.5 block text-[11px]", active ? "text-background/70" : "text-muted-foreground")}>
-                        {d.description}
-                      </span>
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </SheetContent>
-      </Sheet>
+      {/* CENTER — home / dashboard */}
+      <Link
+        to="/"
+        className={cn(
+          "flex flex-col items-center justify-center gap-1 py-3 text-[10px] transition-colors press",
+          isDashboard ? "text-foreground" : "text-muted-foreground active:text-foreground",
+        )}
+      >
+        <span
+          className={cn(
+            "grid h-9 w-9 place-items-center rounded-full transition-colors",
+            isDashboard ? "bg-foreground text-background" : "bg-muted text-foreground",
+          )}
+        >
+          <LayoutDashboard className="h-4 w-4" strokeWidth={1.75} />
+        </span>
+        <span className="uppercase tracking-[0.1em]">Home</span>
+      </Link>
+
+      {/* RIGHT — grow */}
+      <Link
+        to="/grow"
+        className={cn(
+          "flex flex-col items-center justify-center gap-1 py-3 text-[10px] transition-colors press",
+          isGrow ? "text-foreground" : "text-muted-foreground active:text-foreground",
+        )}
+      >
+        <Sprout
+          className="h-5 w-5"
+          strokeWidth={1.5}
+          style={{ color: isGrow ? "var(--color-dept-grow)" : undefined }}
+        />
+        <span className="uppercase tracking-[0.1em]">Grow</span>
+      </Link>
     </nav>
   );
 }

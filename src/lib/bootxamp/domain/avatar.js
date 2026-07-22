@@ -1,21 +1,19 @@
-import { AVATAR_STYLE, DEFAULT_AVATAR_SEED, DICEBEAR_BASE, AVATAR_PRESETS } from "@/constants/avatars";
+import {
+  AVATAR_STYLE,
+  DEFAULT_AVATAR_SEED,
+  AVATAR_PRESETS,
+  getPersona,
+} from "@/constants/avatars";
 
 /**
- * Build a DiceBear SVG URL for the given seed. The app uses a single style
- * (`adventurer`) — twelve curated seeds provide the variety.
+ * Return the image URL for a persona seed. Size is a hint used by consumers
+ * for layout; the CDN asset is a single raster and is rendered pixel-perfect
+ * via CSS (`image-rendering: pixelated`).
  *
- * @param {{ style?: string, seed?: string, size?: number, radius?: number, background?: string }} opts
+ * @param {{ style?: string, seed?: string, size?: number }} opts
  */
-export function buildAvatarUrl({ style, seed, size = 128, radius = 12, background } = {}) {
-  const s = style || AVATAR_STYLE;
-  const seedValue = seed || DEFAULT_AVATAR_SEED;
-  const params = new URLSearchParams({
-    seed: seedValue,
-    size: String(size),
-    radius: String(radius),
-  });
-  if (background) params.set("backgroundColor", background.replace(/^#/, ""));
-  return `${DICEBEAR_BASE}/${s}/svg?${params.toString()}`;
+export function buildAvatarUrl({ seed } = {}) {
+  return getPersona(seed || DEFAULT_AVATAR_SEED).image;
 }
 
 /** Random preset seed. */
@@ -25,16 +23,17 @@ export function randomSeed() {
 }
 
 /**
- * Normalize any legacy avatar value into `{ style, seed }`. Old free-style
- * pickers stored various DiceBear collection ids — those collapse to the
- * single `adventurer` style with the seed preserved.
+ * Normalize any legacy avatar value into `{ style, seed }`. Older DiceBear
+ * seeds that no longer map to a persona collapse to the default.
  */
 export function normalizeAvatar(value) {
   if (value && typeof value === "object" && value.seed) {
-    return { style: AVATAR_STYLE, seed: value.seed };
+    const known = AVATAR_PRESETS.some((p) => p.seed === value.seed);
+    return { style: AVATAR_STYLE, seed: known ? value.seed : DEFAULT_AVATAR_SEED };
   }
   if (typeof value === "string" && value.length > 0) {
-    return { style: AVATAR_STYLE, seed: value };
+    const known = AVATAR_PRESETS.some((p) => p.seed === value);
+    return { style: AVATAR_STYLE, seed: known ? value : DEFAULT_AVATAR_SEED };
   }
   return { style: AVATAR_STYLE, seed: DEFAULT_AVATAR_SEED };
 }

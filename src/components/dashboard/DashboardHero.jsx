@@ -25,13 +25,13 @@ export function DashboardHero() {
       />
       <div className="relative min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex h-5 items-center gap-1.5 rounded-full bg-foreground/5 px-2 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-            {hasSprint ? `Day ${pos.currentDay || 0} / ${pos.totalDays || 0}` : "No Sprint"}
+          <span className="pixel-font inline-flex h-6 items-center gap-1.5 rounded-[3px] border border-border bg-card/80 backdrop-blur-sm px-2 text-[10px] uppercase tracking-[0.16em] text-foreground shadow-[inset_0_-2px_0_color-mix(in_oklab,var(--color-foreground)_10%,transparent)]">
+            <span className="h-1.5 w-1.5 rounded-[1px] bg-accent pulse-dot" />
+            {hasSprint ? `DAY ${pos.currentDay || 0} / ${pos.totalDays || 0}` : "NEW GAME"}
           </span>
           {hasSprint ? (
-            <span className="eyebrow">
-              Week {pos.currentWeek || 0} / {pos.totalWeeks || 0}
+            <span className="pixel-font rounded-[3px] border border-border bg-card/80 px-2 py-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+              WK {pos.currentWeek || 0}/{pos.totalWeeks || 0}
             </span>
           ) : null}
           <span className="eyebrow hidden sm:inline">·</span>

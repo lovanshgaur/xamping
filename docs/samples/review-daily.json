@@ -1,16 +1,17 @@
 {
-  "kind": "review",
   "dayId": "day-1-1",
+  "strengths": [
+    "Strong initial commit hygiene",
+    "Clear async communication in updates"
+  ],
+  "weaknesses": [
+    "PR was too large to review in one pass"
+  ],
+  "blockers": [
+    "Local Node version mismatch slowed setup"
+  ],
+  "managerRemarks": "Great first day. Split future PRs into smaller, reviewable chunks and keep the momentum tomorrow.",
+  "employeeReflection": "Environment setup took longer than expected. Tomorrow I'll timebox setup to 30 minutes.",
   "overallRating": 4,
-  "scores": {
-    "workQuality": 4,
-    "codeQuality": 4,
-    "communication": 5,
-    "consistency": 4
-  },
-  "strengths": ["Strong initial commit", "Clear communication"],
-  "improvements": ["Split PRs into smaller chunks"],
-  "bonusXP": 20,
-  "penaltyXP": 0,
-  "feedback": "Great first day. Keep the momentum tomorrow."
+  "submittedAt": "2026-08-03T20:00:00.000Z"
 }

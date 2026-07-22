@@ -4,6 +4,7 @@ import { useRouterState } from "@tanstack/react-router";
 import { AppSidebar } from "./AppSidebar";
 import { BottomNav } from "./BottomNav";
 import { NotificationsBell } from "./NotificationsBell";
+
 import { useBootxamp } from "@/hooks/useBootxamp";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { MOTION } from "@/constants/animations";
@@ -34,7 +35,7 @@ export function AppShell({ children }) {
   }, [pathname, reduced]);
 
   return (
-    <div className="flex min-h-screen bg-background text-foreground">
+    <div className="relative flex min-h-screen text-foreground">
       <AppSidebar collapsed={collapsed} onToggle={toggle} />
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-30 flex items-center justify-between gap-3 hairline-b bg-background/80 px-4 py-3 backdrop-blur sm:px-8">

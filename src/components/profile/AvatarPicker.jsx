@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/shared/Button";
 import { useBootxamp } from "@/hooks/useBootxamp";
-import { AVATAR_PRESETS, AVATAR_STYLE } from "@/constants/avatars";
-import { buildAvatarUrl, normalizeAvatar } from "@/lib/bootxamp/domain/avatar";
+import { AVATAR_PRESETS, AVATAR_STYLE, getPersona } from "@/constants/avatars";
+import { normalizeAvatar } from "@/lib/bootxamp/domain/avatar";
 import { cn } from "@/lib/utils";
 
 /**
- * Pop-culture avatar picker: twelve curated characters, one style.
+ * Pixel-art avatar picker: eleven curated characters, one style.
  * @param {{ open:boolean, onOpenChange:(v:boolean)=>void }} props
  */
 export function AvatarPicker({ open, onOpenChange }) {
@@ -30,7 +30,7 @@ export function AvatarPicker({ open, onOpenChange }) {
     onOpenChange(false);
   };
 
-  const previewUrl = buildAvatarUrl({ seed, size: 200 });
+  const persona = getPersona(seed);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -40,25 +40,32 @@ export function AvatarPicker({ open, onOpenChange }) {
             Choose your character
           </DialogTitle>
           <DialogDescription className="text-xs text-muted-foreground">
-            Twelve curated personas. Pick one — it persists across every screen.
+            Eleven pixel-art personas. Pick one — it persists across every screen.
           </DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-6 sm:grid-cols-[180px_minmax(0,1fr)]">
           <div className="flex flex-col items-center gap-3">
             <div className="grid h-44 w-44 place-items-center overflow-hidden rounded-[6px] bg-background hairline">
-              <img src={previewUrl} alt="Selected avatar" className="h-full w-full object-cover" />
+              <img
+                src={persona.image}
+                alt={persona.name}
+                className="h-full w-full object-contain"
+                style={{ imageRendering: "pixelated" }}
+              />
             </div>
-            <p className="text-center text-xs text-muted-foreground">
-              {AVATAR_PRESETS.find((p) => p.seed === seed)?.name ?? "Custom"}
-            </p>
+            <div className="text-center">
+              <p className="text-sm font-medium">{persona.name}</p>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                {persona.tagline}
+              </p>
+            </div>
           </div>
 
           <div>
             <p className="eyebrow">Personas</p>
             <div className="mt-3 grid max-h-80 grid-cols-3 gap-2 overflow-y-auto pr-1 sm:grid-cols-4">
               {AVATAR_PRESETS.map((p) => {
-                const url = buildAvatarUrl({ seed: p.seed, size: 96 });
                 const active = seed === p.seed;
                 return (
                   <button
@@ -74,9 +81,10 @@ export function AvatarPicker({ open, onOpenChange }) {
                     aria-pressed={active}
                   >
                     <img
-                      src={url}
+                      src={p.image}
                       alt={p.name}
-                      className="h-16 w-16 rounded-[4px] object-cover transition-transform group-hover:scale-105"
+                      className="h-16 w-16 rounded-[4px] object-contain transition-transform group-hover:scale-105"
+                      style={{ imageRendering: "pixelated" }}
                     />
                     <span className="truncate">{p.name}</span>
                   </button>
