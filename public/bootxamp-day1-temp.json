@@ -1,0 +1,164 @@
+{
+  "dayNumber": 1,
+  "date": "2026-07-21",
+  "theme": "Orientation & First Steps",
+  "mission": "Set up your environment, understand the BootXamp rhythm, and complete your first micro-tasks across all four departments.",
+  "managerBrief": "Welcome to BootXamp. Day 1 is about calibration, not volume. Finish small, finish clean, and build the habit of submitting a complete day.",
+  "estimatedHours": 4,
+  "departments": [
+    {
+      "slug": "learn",
+      "name": "Learn",
+      "description": "Study, courses, notes, and structured practice.",
+      "tasks": [
+        {
+          "id": "learn-d1-t1",
+          "title": "Watch BootXamp onboarding video",
+          "description": "Understand the weekly rhythm, daily submission flow, and promotion system.",
+          "department": "learn",
+          "estimatedTime": 30,
+          "priority": "high",
+          "difficulty": "easy",
+          "xp": 25,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        },
+        {
+          "id": "learn-d1-t2",
+          "title": "Read the engineering handbook chapter 1",
+          "description": " skim the coding standards, git workflow, and review checklist.",
+          "department": "learn",
+          "estimatedTime": 45,
+          "priority": "medium",
+          "difficulty": "easy",
+          "xp": 35,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        },
+        {
+          "id": "learn-d1-t3",
+          "title": "Take notes on 3 key takeaways",
+          "description": "Write a short summary of the most important rules you learned today.",
+          "department": "learn",
+          "estimatedTime": 20,
+          "priority": "medium",
+          "difficulty": "easy",
+          "xp": 20,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "slug": "build",
+      "name": "Build",
+      "description": "Projects, features, commits, and shipping.",
+      "tasks": [
+        {
+          "id": "build-d1-t1",
+          "title": "Set up local development environment",
+          "description": "Install dependencies, run the dev server, and confirm the app builds.",
+          "department": "build",
+          "estimatedTime": 60,
+          "priority": "high",
+          "difficulty": "easy",
+          "xp": 50,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        },
+        {
+          "id": "build-d1-t2",
+          "title": "Create your first commit",
+          "description": "Make a small, meaningful change and commit it with a conventional message.",
+          "department": "build",
+          "estimatedTime": 20,
+          "priority": "high",
+          "difficulty": "easy",
+          "xp": 40,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "slug": "grow",
+      "name": "Grow",
+      "description": "Reading, writing, communication, consistency.",
+      "tasks": [
+        {
+          "id": "grow-d1-t1",
+          "title": "Write a 150-word reflection",
+          "description": "What do you want to achieve in the next 7 weeks? Be specific.",
+          "department": "grow",
+          "estimatedTime": 25,
+          "priority": "medium",
+          "difficulty": "easy",
+          "xp": 30,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        },
+        {
+          "id": "grow-d1-t2",
+          "title": "Read one technical article",
+          "description": "Pick an article relevant to your stack and note one thing you can apply.",
+          "department": "grow",
+          "estimatedTime": 20,
+          "priority": "low",
+          "difficulty": "easy",
+          "xp": 20,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "slug": "career",
+      "name": "Career",
+      "description": "Applications, networking, interviews, portfolio.",
+      "tasks": [
+        {
+          "id": "career-d1-t1",
+          "title": "Update LinkedIn headline",
+          "description": "Make it clear what you do and what you are becoming.",
+          "department": "career",
+          "estimatedTime": 15,
+          "priority": "medium",
+          "difficulty": "easy",
+          "xp": 25,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        },
+        {
+          "id": "career-d1-t2",
+          "title": "Identify 5 target companies",
+          "description": "List companies you would want to work with and why.",
+          "department": "career",
+          "estimatedTime": 30,
+          "priority": "medium",
+          "difficulty": "easy",
+          "xp": 35,
+          "completed": false,
+          "completedAt": null,
+          "evidence": "",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

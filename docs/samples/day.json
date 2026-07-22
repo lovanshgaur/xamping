@@ -1,0 +1,48 @@
+{
+  "kind": "day",
+  "id": "day-1-1",
+  "dayNumber": 1,
+  "date": "2026-08-03",
+  "theme": "Orientation",
+  "mission": "Set up your environment and complete first ritual across all departments.",
+  "departments": [
+    {
+      "id": "learn",
+      "name": "Learn",
+      "tasks": [
+        { "id": "l1", "title": "Read: Modern React patterns", "xp": 20 },
+        { "id": "l2", "title": "Watch: TypeScript in 100 minutes", "xp": 30 }
+      ]
+    },
+    {
+      "id": "build",
+      "name": "Build",
+      "tasks": [
+        { "id": "b1", "title": "Scaffold portfolio repo", "xp": 40 },
+        { "id": "b2", "title": "Push initial commit", "xp": 20 }
+      ]
+    },
+    {
+      "id": "grow",
+      "name": "Grow",
+      "tasks": [
+        { "id": "g1", "title": "Write a short intro post", "xp": 25 }
+      ]
+    },
+    {
+      "id": "career",
+      "name": "Career",
+      "tasks": [
+        { "id": "c1", "title": "Update LinkedIn headline", "xp": 15 },
+        { "id": "c2", "title": "Send 1 outreach message", "xp": 25 }
+      ]
+    },
+    {
+      "id": "operate",
+      "name": "Operate",
+      "tasks": [
+        { "id": "o1", "title": "Log today’s health metrics", "xp": 15 }
+      ]
+    }
+  ]
+}

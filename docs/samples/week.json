@@ -1,0 +1,10 @@
+{
+  "kind": "week",
+  "id": "week-1",
+  "weekNumber": 1,
+  "theme": "Foundations",
+  "focus": "TypeScript, React fundamentals, tooling",
+  "startDate": "2026-08-03",
+  "endDate": "2026-08-09",
+  "days": []
+}

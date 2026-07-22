@@ -1,0 +1,17 @@
+{
+  "kind": "personal",
+  "name": "Ada Lovelace",
+  "designation": "Frontend Apprentice",
+  "company": "BootXamp Studio",
+  "birthday": "2001-12-10",
+  "height": 168,
+  "weight": 62,
+  "bio": "Building interfaces with taste. Long-time reader of the classics.",
+  "avatar": { "style": "adventurer", "seed": "Nova" },
+  "socials": {
+    "github": "https://github.com/ada",
+    "linkedin": "https://linkedin.com/in/ada",
+    "website": "https://ada.dev",
+    "twitter": "https://twitter.com/ada"
+  }
+}
